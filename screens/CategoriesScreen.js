@@ -12,7 +12,7 @@ const renderCategoryItem = (itemData) => {
 };
 
 const CategoriesScreen = () => {
-  console.log(CATEGORIES);
+
   return (
     <FlatList
       data={CATEGORIES}
