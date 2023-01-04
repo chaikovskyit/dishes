@@ -1,10 +1,17 @@
+import { useContext } from 'react'
 import { View, Text, StyleSheet } from 'react-native'
+import MealsList from '../components/MealsList/MealsList'
+import { FavoritesContext} from '../store/context/favorite-context'
+import {MEALS} from '../data/dummy-data'
 
 const FavoritesScreen = () => {
+
+  const FavoriteMealsCtx = useContext(FavoritesContext)
+
+  const favoriteMeals = MEALS.filter(meal => FavoriteMealsCtx.ids.includes(meal.id) )
+
   return (
-    <View>
-      <Text>This is favorite screen</Text>
-    </View>
+    <MealsList items={favoriteMeals}/>
   )
 }
 
